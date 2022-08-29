@@ -57,7 +57,7 @@ public class Tfm2022Controller {
         TfmUser saved = tfm2022Repository.save(tfmuser);
         log.info(saved.toString());
 
-        return "redirect:/";
+        return "redirect:http://192.168.5.11:5501/";
     }
 
     @GetMapping("/main")
@@ -76,32 +76,32 @@ public class Tfm2022Controller {
         return "detail";
     }
 
-    @PostMapping("/detail/players")
-    @ApiOperation(value="팀 상세보기 + 선수목록", notes="localhost:8080/detail")
-    public String tfmPlayers(PlayerForm form, Model model){
+//    @PostMapping("/detail/players")
+//    @ApiOperation(value="팀 상세보기 + 선수목록", notes="localhost:8080/detail")
+//    public String tfmPlayers(PlayerForm form, Model model){
+//
+//        Player playerEntity = form.toEntity();
+//        log.info("111 : "+ playerEntity);
+//        List<Player> PlayerList = playerRepository.findByPlayer(playerEntity.getTno());
+//        log.info("222 : "+ PlayerList);
+//        model.addAttribute("playerList", PlayerList);
+//        log.info("model111 : "+ model);
+//        List<Team> teamEntityList = teamRepository.findAll();
+//        model.addAttribute("teamList", teamEntityList);
+//        log.info("model222 : "+ model);
+//
+//        return "detail";
+//    }
 
-        Player playerEntity = form.toEntity();
-        log.info("111 : "+ playerEntity);
-        List<Player> PlayerList = playerRepository.findByPlayer(playerEntity.getTno());
-        log.info("222 : "+ PlayerList);
-        model.addAttribute("playerList", PlayerList);
-        log.info("model111 : "+ model);
-        List<Team> teamEntityList = teamRepository.findAll();
-        model.addAttribute("teamList", teamEntityList);
-        log.info("model222 : "+ model);
-
-        return "/detail";
-    }
-
-    @GetMapping("my")
-    @ApiOperation(value="(미구현)My팀", notes="localhost:8080/my")
-    public String tfmMy(){
-        return "my";
-    }
-
-    @GetMapping("play")
-    @ApiOperation(value="(미구현)시뮬레이션", notes="localhost:8080/play")
-    public String tfmPlay(){
-        return "play";
-    }
+//    @GetMapping("my")
+//    @ApiOperation(value="(미구현)My팀", notes="localhost:8080/my")
+//    public String tfmMy(){
+//        return "my";
+//    }
+//
+//    @GetMapping("play")
+//    @ApiOperation(value="(미구현)시뮬레이션", notes="localhost:8080/play")
+//    public String tfmPlay(){
+//        return "play";
+//    }
 }

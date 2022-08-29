@@ -12,5 +12,5 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
     @Query(value =
             "SELECT * FROM player WHERE tno = :tnoId",
             nativeQuery = true)
-    List<Player> findByPlayer(@Param("tnoId") Team tnoId);
+    List<Player> findByPlayer(@Param("tnoId") Long tnoId);
 }
