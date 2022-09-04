@@ -7,16 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import tamna6.tfm2022.dto.PlayerForm;
-import tamna6.tfm2022.dto.TfmUserForm;
-import tamna6.tfm2022.entity.Player;
+import tamna6.tfm2022.dto.TfmUserDto;
 import tamna6.tfm2022.entity.Team;
 import tamna6.tfm2022.entity.TfmUser;
 import tamna6.tfm2022.repository.PlayerRepository;
 import tamna6.tfm2022.repository.TeamRepository;
-import tamna6.tfm2022.repository.Tfm2022Repository;
+import tamna6.tfm2022.repository.TfmUserRepository;
 
 import java.util.List;
 
@@ -26,7 +23,7 @@ import java.util.List;
 public class Tfm2022Controller {
 
     @Autowired
-    private Tfm2022Repository tfm2022Repository;
+    private TfmUserRepository tfm2022Repository;
 
     @Autowired
     private TeamRepository teamRepository;
@@ -47,7 +44,7 @@ public class Tfm2022Controller {
 
     @PostMapping("/tfm2022/create")
     @ApiOperation(value="회원가입 값 전달", notes="웹페이지 없음, 회원가입 성공 시 로그인 화면 이동")
-    public String createTfmAccount(TfmUserForm form){
+    public String createTfmAccount(TfmUserDto form){
 
         //1. DTO -> Entity 변환
         TfmUser tfmuser = form.toEntity();
