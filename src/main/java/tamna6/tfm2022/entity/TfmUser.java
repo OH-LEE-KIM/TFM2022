@@ -1,9 +1,6 @@
 package tamna6.tfm2022.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.annotations.Table;
 
 import javax.persistence.Column;
@@ -16,6 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString
 @Getter
+@Data
 public class TfmUser {
 
     @Id

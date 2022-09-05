@@ -33,11 +33,22 @@ public class Tfm2022Controller {
     @Autowired
     private PlayerRepository playerRepository;
 
-    @GetMapping("/")
-    @ApiOperation(value="로그인", notes="localhost:8080")
-    public String tfmLogin(){
-        return "/login";
-    }
+
+//    @GetMapping("/login")
+//    @ApiOperation(value="로그인", notes="localhost:8080")
+//    public String tfmLogin(){
+//        return "/login";
+//    }
+//    @GetMapping("/logout")
+//    public String tfmLogout(){
+//        return "/login";
+//    }
+//
+//    @GetMapping("/login/error")
+//    public String loginError(Model model) {
+//        model.addAttribute("loginError", true);
+//        return "login";
+//    }
 
     @GetMapping("/signup")
     @ApiOperation(value="회원가입", notes="localhost:8080/signup")

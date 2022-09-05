@@ -6,7 +6,7 @@ plugins {
 
 group = 'tamna6'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -31,8 +31,9 @@ dependencies {
 	implementation 'mysql:mysql-connector-java'
 
 //	//로그인 - 김예진
-//	implementation 'org.springframework.boot:spring-boot-starter-security'
-//	testImplementation 'org.springframework.security:spring-security-test'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	testImplementation 'org.springframework.security:spring-security-test'
+
 }
 
 tasks.named('test') {
