@@ -6,6 +6,10 @@ import lombok.Setter;
 import lombok.ToString;
 import tamna6.tfm2022.entity.TfmUser;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @AllArgsConstructor
 @ToString
 @Getter
@@ -18,8 +22,8 @@ public class TfmUserDto {
     private String tamid;
     private int gisu;
     private String mail;
-
+    private LocalDateTime createdate;
     public TfmUser toEntity(){
-        return new TfmUser(id, pw, nick, uname, tamid, gisu, mail, null, null);
+        return new TfmUser(id, pw, nick, uname, tamid, gisu, mail, createdate);
     }
 }

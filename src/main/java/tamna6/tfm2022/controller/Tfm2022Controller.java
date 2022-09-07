@@ -22,56 +22,56 @@ import java.util.List;
 @Api(value="Swagger Test V1")
 public class Tfm2022Controller {
 
-    @Autowired
-    private TfmUserRepository tfm2022Repository;
-
-    @Autowired
-    private TeamRepository teamRepository;
-    @Autowired
-    private PlayerRepository playerRepository;
-
-    @GetMapping("/")
-    @ApiOperation(value="로그인", notes="localhost:8080")
-    public String tfmLogin(){
-        return "/login";
-    }
-
-    @GetMapping("/signup")
-    @ApiOperation(value="회원가입", notes="localhost:8080/signup")
-    public String tfmSignUp(){
-        return "/signup";
-    }
-
-    @PostMapping("/tfm2022/create")
-    @ApiOperation(value="회원가입 값 전달", notes="웹페이지 없음, 회원가입 성공 시 로그인 화면 이동")
-    public String createTfmAccount(TfmUserDto form){
-
-        //1. DTO -> Entity 변환
-        TfmUser tfmuser = form.toEntity();
-        log.info(form.toString());
-
-        //2. Repository에게 Entity를 DB안에 저장
-        TfmUser saved = tfm2022Repository.save(tfmuser);
-        log.info(saved.toString());
-
-        return "redirect:http://192.168.5.11:5501/";
-    }
-
-    @GetMapping("/main")
-    @ApiOperation(value="TFM2022 메인화면", notes="localhost:8080/main")
-    public String tfmMain(){
-        return "/main";
-    }
-
-    @GetMapping("/detail")
-    @ApiOperation(value="팀 상세보기", notes="localhost:8080/detail")
-    public String tfmDetail(Model model){
-        //ArrayList 사용
-        List<Team> teamEntityList = teamRepository.findAll();
-
-        model.addAttribute("teamList", teamEntityList);
-        return "detail";
-    }
+//    @Autowired
+//    private TfmUserRepository tfm2022Repository;
+//
+//    @Autowired
+//    private TeamRepository teamRepository;
+//    @Autowired
+//    private PlayerRepository playerRepository;
+//
+//    @GetMapping("/")
+//    @ApiOperation(value="로그인", notes="localhost:8080")
+//    public String tfmLogin(){
+//        return "/login";
+//    }
+//
+//    @GetMapping("/signup")
+//    @ApiOperation(value="회원가입", notes="localhost:8080/signup")
+//    public String tfmSignUp(){
+//        return "/signup";
+//    }
+//
+//    @PostMapping("/tfm2022/create")
+//    @ApiOperation(value="회원가입 값 전달", notes="웹페이지 없음, 회원가입 성공 시 로그인 화면 이동")
+//    public String createTfmAccount(TfmUserDto form){
+//
+//        //1. DTO -> Entity 변환
+//        TfmUser tfmuser = form.toEntity();
+//        log.info(form.toString());
+//
+//        //2. Repository에게 Entity를 DB안에 저장
+//        TfmUser saved = tfm2022Repository.save(tfmuser);
+//        log.info(saved.toString());
+//
+//        return "redirect:http://192.168.5.11:5501/";
+//    }
+//
+//    @GetMapping("/main")
+//    @ApiOperation(value="TFM2022 메인화면", notes="localhost:8080/main")
+//    public String tfmMain(){
+//        return "/main";
+//    }
+//
+//    @GetMapping("/detail")
+//    @ApiOperation(value="팀 상세보기", notes="localhost:8080/detail")
+//    public String tfmDetail(Model model){
+//        //ArrayList 사용
+//        List<Team> teamEntityList = teamRepository.findAll();
+//
+//        model.addAttribute("teamList", teamEntityList);
+//        return "detail";
+//    }
 
 //    @PostMapping("/detail/players")
 //    @ApiOperation(value="팀 상세보기 + 선수목록", notes="localhost:8080/detail")
